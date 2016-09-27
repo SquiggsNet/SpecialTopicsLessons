@@ -1,0 +1,16 @@
+div{
+    position: absolute;
+    top: 200px;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#step1A{
+    background-color: aqua;
+    z-index: 1;
+}
+
+#step1B{
+    background-color: orangered;
+    z-index: -1;
+}
