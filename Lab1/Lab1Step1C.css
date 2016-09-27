@@ -1,0 +1,14 @@
+div.visualCue{
+    position: absolute;
+    top: 300px;
+    border: 2px Solid darkblue;
+    text-align: center;
+    background-color: blueviolet;
+    width: 250px;
+    height: 220px;
+    line-height: 180px;
+    text-align: center;
+    left: 42%;
+    display: none;
+}
+
