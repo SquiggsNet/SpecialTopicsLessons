@@ -1,0 +1,12 @@
+h3.accordHeader{
+    border: 2px Solid darkblue;
+    background-color: blueviolet;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    margin: 0px;
+}
+
+div.info p{
+    display: none;
+}
