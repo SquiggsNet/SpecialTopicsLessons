@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function Employee(firstName, lastName, age, salary)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.salary = salary;
+
+            this.printEmployeeDetails = function(){
+                return this.firstName+" "+this.lastName+" - "+this.age+" - "+this.salary;
+            }
+        }
+
+        var squiggs = new Employee("Squiggs", "Net", "30", "150");
+        document.write(squiggs.printEmployeeDetails());
+        var donald = new Employee("Donald", "Duck", "75", "100000");
+        document.write(donald.printEmployeeDetails());
+        squiggs.age = 31;
+        document.write(squiggs.printEmployeeDetails());
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,16 +1,18 @@
 div{
     position: absolute;
     top: 200px;
+    left: 40%;
     border: 3px solid black;
     text-align: center;
 }
 
-#step1A{
+
+.divSwap{
     background-color: aqua;
     z-index: 1;
 }
 
-#step1B{
+.divSwap:first-of-type{
     background-color: orangered;
     z-index: -1;
 }

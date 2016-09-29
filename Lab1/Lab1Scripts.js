@@ -1,23 +1,24 @@
 "use strict";
 
-function changeDivPriority(selectedElement)
-{
+function changeDivPriority(selectedElement) {
     //access by id
-    var firstDivNode = document.getElementById("step1A");
-    var secondDivNode = document.getElementById("step1B");
+    var divNodes = document.getElementsByClassName("divSwap");
 
-    if (selectedElement==firstDivNode){
-        firstDivNode.style.zIndex = -1;
-        firstDivNode.style.opacity = 0.5;
-        secondDivNode.style.zIndex = 1;
-        secondDivNode.style.opacity = 1;
-    }else if(selectedElement==secondDivNode){
-        firstDivNode.style.zIndex = 1;
-        firstDivNode.style.opacity = 1;
-        secondDivNode.style.zIndex = -1;
-        secondDivNode.style.opacity = 0.5;
+    if (selectedElement == divNodes[0]) {
+        divNodes[0].style.zIndex = -1;
+        divNodes[0].style.opacity = 0.5;
+        divNodes[1].style.zIndex = 1;
+        divNodes[1].style.opacity = 1;
+    } else if (selectedElement == divNodes[1]) {
+        divNodes[0].style.zIndex = 1;
+        divNodes[0].style.opacity = 1;
+        divNodes[1].style.zIndex = -1;
+        divNodes[1].style.opacity = 0.5;
     }
-
-
-
 }
+
+var divClick = document.getElementsByClassName("divSwap");
+for (var i=0; i<divClick.length; i++)
+divClick[i].addEventListener("dblclick", function(){
+    changeDivPriority(this)
+});

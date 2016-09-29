@@ -3,7 +3,8 @@
 function navigateHeadings(selectedElement)
 {
     var headingNodes = document.getElementsByClassName("accordHeader");
-    var infoNodes = document.getElementsByClassName("info");
+    //var infoNodes = document.getElementsByClassName("info");
+    var infoNodes = selectedElement.parentNode;
     var selectedInfo = selectedElement.parentNode.childNodes[3];
 
     if (selectedInfo.style.display === "none"){
@@ -13,7 +14,7 @@ function navigateHeadings(selectedElement)
     for (var i = 0; i < headingNodes.length; i++){
         headingNodes[i].style.backgroundColor = "blueviolet";
         headingNodes[i].style.color = "black";
-        infoNodes[i].childNodes[3].style.display = "none";
+        infoNodes.childNodes[3].style.display = "none";
     }
 
     if(selectState){
@@ -22,3 +23,10 @@ function navigateHeadings(selectedElement)
         selectedInfo.style.display = "block";
     }
 }
+
+var headClick = document.getElementsByClassName("accordHeader");
+for (var i=0; i<headClick.length; i++)
+    headClick[i].addEventListener("click", function(){
+        navigateHeadings(this)
+    });
+

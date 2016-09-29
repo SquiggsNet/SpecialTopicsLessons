@@ -7,7 +7,6 @@ div.visualCue{
     width: 250px;
     height: 220px;
     line-height: 180px;
-    text-align: center;
     left: 42%;
     display: none;
 }
