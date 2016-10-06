@@ -1,6 +1,8 @@
 "use strict";
 var i = 0;
 
+setInterval(shuffleVisuals, 2000);
+
 function shuffleVisuals(){
 
     var divNodes = document.getElementsByClassName("visualCue");
@@ -18,15 +20,13 @@ function shuffleVisuals(){
 
 
 
-function startTimer()
-{
-    setTimeout(shuffleVisuals(), 30);
-}
+//function startTimer()
+//{
+//    setInterval(shuffleVisuals(), 5000);
+//}
 
 var startButton = document.getElementById("startShow");
-startButton.addEventListener("click", function(){
-    startTimer(this);
-});
+//startButton.addEventListener("click", startTimer);
 
 
 

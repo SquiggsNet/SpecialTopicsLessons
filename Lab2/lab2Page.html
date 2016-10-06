@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab 2</title>
-
 </head>
-<body>
-    <p>Student Number:<input type="text" name="sNumber" /></p>
-    <p>First Name:<input type="text" name="fName" /></p>
-    <p>Last Name:<input type="text" name="lName" /></p>
-    <button id="newStudent">RegisterStudent</button>
-
-    <script src="lab2Script.js"></script>
-</body>
+    <body>
+        <p>Student Id:
+            <input type="text" name="sNumber" id="sNumber"/>
+        </p>
+        <p>First Name:
+            <input type="text" name="fName" id="fName"/>
+        </p>
+        <p>Last Name:
+            <input type="text" name="lName" id="lName"/>
+        </p>
+        <button id="newStudent">Register Student</button>
+        <div id="initiateJSON">
+            <ul id="studentList"></ul>
+        </div>
+        <div id="jSON">
+        </div>
+        <script src="lab2Script.js"></script>
+    </body>
 </html>
