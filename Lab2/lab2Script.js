@@ -17,7 +17,11 @@ registerStudent.addEventListener("click", function()
     studentObj = new Student(document.getElementById("sNumber").value,
         document.getElementById("fName").value,
         document.getElementById("lName").value);
-    studentList = document.getElementById("studentList");
+
+    if(studentObj.number == ""){
+        alert("No student number entered");
+        return;
+    }
 
     for(i=0;i<studentObjList.length;i++){
 
@@ -27,6 +31,7 @@ registerStudent.addEventListener("click", function()
             return;
         }
     }
+
     studentObjList.push(studentObj);
 
     var node = document.createElement("li");
@@ -34,15 +39,16 @@ registerStudent.addEventListener("click", function()
     studentList.appendChild(node);
 });
 
-jsonInit = document.getElementById("initiateJSON");
-jsonView = document.getElementById("jSON");
-jsonInit.addEventListener("mouseover", function()
+studentList = document.getElementById("studentList");
+studentList.addEventListener("mouseover", function()
 {
     var jSonStudentList = JSON.stringify(studentObjList);
     jsonView.innerHTML = jSonStudentList;
     jsonView.style.backgroundColor = "red";
-    jsonView.style.visibility = "visible";
+    jsonView.style.display = "block";
 });
+
+jsonView = document.getElementById("jSON");
 jsonView.addEventListener("click", function()
 {
     jsonView.style.display = "none";
