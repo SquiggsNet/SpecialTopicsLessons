@@ -1,3 +1,5 @@
+"use strict";
+
 (function(){
 
     var gameBoard = new Array(6);
@@ -15,6 +17,7 @@
     {
         for(var y=0; y<gameBoard[x].length;y++)
         {
+            var cellObj;
             if((x==0&&y==3)||(x==0&&y==4)||(x==1&&y==3)||(x==4&&y==1)){
                 cellObj = new gameCell("blue","false");
             }else if((x==3&&y==2)||(x==3&&y==4)||(x==5&&y==2)){
@@ -24,7 +27,6 @@
             }else{
                 cellObj = new gameCell("white","true");
             }
-
             gameBoard[x][y]=cellObj;
         }
     }
@@ -32,14 +34,13 @@
     var tableCreation = document.getElementById('table');
     var table = document.createElement("table");
     var tableBody = document.createElement("tbody");
-    var color = "grey";
     for(var x=0;x<6;x++){
         var row = document.createElement("tr");
         for(var y=0;y<6;y++){
             var cell = document.createElement("td");
             if(gameBoard[x][y].isClickable=="true"){
                 cell.style.backgroundColor = "grey";
-                cell.addEventListener('click',changeColor);
+                cell.onmousedown = reverseColor;
             }else{
                 cell.style.backgroundColor = gameBoard[x][y].color;
             }
@@ -50,23 +51,73 @@
     table.appendChild(tableBody);
     tableCreation.appendChild(table);
 
-    function changeColor(){
-        var currentCell = window.event.srcElement;
-        if(currentCell.style.backgroundColor=="grey"){
-            currentCell.style.backgroundColor = "blue";
-        }else if(currentCell.style.backgroundColor=="blue"){
-            currentCell.style.backgroundColor = "white";
-        }else{
-            currentCell.style.backgroundColor = "grey";
+    document.oncontextmenu = function() {
+        return false;
+    }
+
+    function reverseColor(event){
+
+        if(event.button == 0){
+            var currentCell = window.event.srcElement;
+            if(currentCell.style.backgroundColor=="grey"){
+                currentCell.style.backgroundColor = "blue";
+            }else if(currentCell.style.backgroundColor=="blue"){
+                currentCell.style.backgroundColor = "white";
+            }else{
+                currentCell.style.backgroundColor = "grey";
+            }
+        }else if(event.button == 2){
+            var currentCell = window.event.srcElement;
+            if(currentCell.style.backgroundColor=="grey"){
+                currentCell.style.backgroundColor = "white";
+            }else if(currentCell.style.backgroundColor=="white"){
+                currentCell.style.backgroundColor = "blue";
+            }else{
+                currentCell.style.backgroundColor = "grey";
+            }
+            return false;
         }
     }
 
-    puzzleCheck = document.getElementById("puzzleCheck");
-    puzzleCheck.addEventListener("click", function(){
-        for(var x=0; x<gameBoard.length;x++) {
-            for (var y = 0; y < gameBoard[x].length; y++) {
 
+    var puzzleCheck = document.getElementById("puzzleCheck");
+
+    puzzleCheck.addEventListener("click", function(){
+        var isMatch = true;
+        var isGood = true;
+        var feedback = document.getElementById("feedBack");
+        var tableCheck = tableBody.childNodes;
+
+        for(var x=0; x<gameBoard.length;x++) {
+            var rowCheck = tableCheck[x].childNodes;
+
+            for (var y = 0; y < gameBoard[x].length; y++) {
+                var cellCheck = rowCheck[y];
+
+                if (cellCheck.style.backgroundColor != gameBoard[x][y].color) {
+                    isMatch = false;
+                }else{
+                    continue;
+                }
+                if (cellCheck.style.backgroundColor != "grey") {
+                    isGood = false;
+                }
             }
         }
+
+        if (feedback.childNodes[0] != null){
+            feedback.removeChild(feedback.childNodes[0]);
+        }
+
+        if(isMatch){
+            feedback.appendChild(document.createTextNode("Puzzle is complete and correct."));
+        }else if(isGood){
+            feedback.appendChild(document.createTextNode("So far so good."));
+        }else{
+            feedback.appendChild(document.createTextNode("Something is wrong."));
+        }
+
     });
+
 })();
+
