@@ -33,11 +33,17 @@
 
     var tableCreation = document.getElementById('table');
     var table = document.createElement("table");
+    table.style.borderCollapse = "collapse";
     var tableBody = document.createElement("tbody");
     for(var x=0;x<6;x++){
         var row = document.createElement("tr");
         for(var y=0;y<6;y++){
             var cell = document.createElement("td");
+            cell.style.border = "2px solid black";
+            cell.style.width = "50px";
+            cell.style.height = "50px";
+            cell.style.textAlign = "center";
+            cell.style.color = "red";
             if(gameBoard[x][y].isClickable=="true"){
                 cell.style.backgroundColor = "grey";
                 cell.onmousedown = reverseColor;
@@ -51,7 +57,7 @@
     table.appendChild(tableBody);
     tableCreation.appendChild(table);
 
-    document.oncontextmenu = function() {
+    table.oncontextmenu = function() {
         return false;
     }
 
@@ -81,13 +87,12 @@
 
 
     var puzzleCheck = document.getElementById("puzzleCheck");
-
     puzzleCheck.addEventListener("click", function(){
         var isMatch = true;
         var isGood = true;
         var feedback = document.getElementById("feedBack");
-        var tableCheck = tableBody.childNodes;
 
+        var tableCheck = tableBody.childNodes;
         for(var x=0; x<gameBoard.length;x++) {
             var rowCheck = tableCheck[x].childNodes;
 
@@ -117,6 +122,37 @@
             feedback.appendChild(document.createTextNode("Something is wrong."));
         }
 
+    });
+
+    var showIncorrect = document.getElementById("incorrect");
+    showIncorrect.addEventListener("click",function(){
+        if(showIncorrect.checked){
+            var tableCheck = tableBody.childNodes;
+            for(var x=0; x<gameBoard.length;x++) {
+                var rowCheck = tableCheck[x].childNodes;
+                for (var y = 0; y < gameBoard[x].length; y++) {
+                    var cellCheck = rowCheck[y];
+                    if (cellCheck.style.backgroundColor == gameBoard[x][y].color) {
+                        continue;
+                    }
+                    if (cellCheck.style.backgroundColor != "grey") {
+                        cellCheck.appendChild(document.createTextNode("X"));
+                        continue;
+                    }
+                }
+            }
+        }else{
+            var tableCheck = tableBody.childNodes;
+            for(var x=0; x<gameBoard.length;x++) {
+                var rowCheck = tableCheck[x].childNodes;
+                for (var y = 0; y < gameBoard[x].length; y++) {
+                    var cellCheck = rowCheck[y];
+                    if (cellCheck.childNodes[0] != null){
+                        cellCheck.removeChild(cellCheck.childNodes[0]);
+                    }
+                }
+            }
+        }
     });
 
 })();
