@@ -1,0 +1,22 @@
+{
+  "name": "AngularHttpBootstrapDemo",
+  "homepage": "https://github.com/NSCC-Fall2016-INFT4000/Rafael-Scott-w0218584",
+  "authors": [
+    "Scott Rafael <w0218584@nscc.ca>"
+  ],
+  "description": "A cool angula app that displays customers",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "http",
+    "tables"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
