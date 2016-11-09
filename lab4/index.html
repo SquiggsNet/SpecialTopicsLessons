@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="labApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Students</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="labController">
+
+    <form ng-submit="addStudent()">
+        <label>Student Id:
+            <input type="text" placeholder="Enter Student Id" ng-model="sNumber"/>
+        </label><br>
+        <label>First Name:
+            <input type="text" placeholder="Enter First Name" ng-model="fName"/>
+        </label><br>
+        <label>Last Name:
+            <input type="text" placeholder="Enter Last Name" ng-model="lName"/>
+        </label><br>
+        <input type="submit" value="Add Student"/>
+    </form>
+
+    <ul>
+        <li ng-repeat="student in students">
+            <span>{{student.snumber}} - {{student.fname}} {{student.lname}}</span>
+        </li>
+    </ul>
+
+        <!--Needs to be Created-->
+    <!--<script src="validation.js"></script>-->
+
+</body>
+</html>

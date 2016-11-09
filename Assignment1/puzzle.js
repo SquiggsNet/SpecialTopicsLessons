@@ -21,7 +21,7 @@
             }
         }
 
-        if (selectedDifficulty == "six") {
+        if (selectedDifficulty == "six") {                      //6 x 6 GAME GENERATE
             var gameBoard = new Array(6);
             for (var i = 0; i < gameBoard.length; i++) {
                 gameBoard[i] = new Array(6);
@@ -44,7 +44,7 @@
                 }
             }
 
-        } else if (selectedDifficulty == "eight") {
+        } else if (selectedDifficulty == "eight") {             //8 x 8 GAME GENERATE
 
             var gameBoard = new Array(8);               //Create two dimensional array to contain cell objects
             for (var i = 0; i < gameBoard.length; i++) {
@@ -68,7 +68,7 @@
                 }
             }
 
-        } else if (selectedDifficulty == "ten") {
+        } else if (selectedDifficulty == "ten") {           //10 x 10 GAME GENERATE
             var gameBoard = new Array(10);               //Create two dimensional array to contain cell objects
             for (var i = 0; i < gameBoard.length; i++) {
                 gameBoard[i] = new Array(10);
@@ -126,7 +126,12 @@
             return false;
         }                                      //surpressing the right-click menu on the table
 
+        var feedback = document.getElementById("feedBack");
         function colorSwap(event) {
+
+            if (feedback.childNodes[0] != null) {
+                feedback.removeChild(feedback.childNodes[0]);
+            }
 
             if (event.button == 0) {                                                  //based on left click
                 var currentCell = window.event.srcElement;
@@ -148,6 +153,7 @@
                 }
                 return false;
             }
+
         }                                               //adjust cell color
 
 
@@ -155,7 +161,6 @@
         puzzleCheck.addEventListener("click", function () {
             var isMatch = true;
             var isGood = true;
-            var feedback = document.getElementById("feedBack");
 
             var tableCheck = tableBody.childNodes;
             for (var x = 0; x < gameBoard.length; x++) {

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="app.js"></script>
+        <style>
+            li{
+                list-style: none;
+            }
+            .done-true{
+                color: grey;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body ng-controller="todoController">
+        <h1>Scott's Todo List</h1>
+        <ul>
+            <li ng-repeat="todoItem in todos">
+                <input type="checkbox" ng-model="todoItem.done"/>
+                <span class="done-{{todoItem.done}}">{{todoItem.text}}</span>
+            </li>
+        </ul>
+        <hr/>
+        <form ng-submit="addNewItem()">
+            <label>New Todo Item: </label>
+            <input type="text" placeholder="Add new item" ng-model="newItem"/>
+            <input type="submit" value="Add Todo"/>
+        </form>
+        <hr/>
+        <button ng-click="archiveTodos()">Archive</button>
+        <hr/>
+        <div my-todo-report></div>
+    </body>
+</html>

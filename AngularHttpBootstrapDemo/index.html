@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
+<head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="app.js"></script>
-    <style src="bower_componets/bootstrap/dist/css/bootstrap.min.css" type="text/css"></style>
+    <script type="text/javascript" src="bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-ace/ui-ace.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <script type="text/css">
+        .ace_editor { height: 200px; }
+    </script>
 </head>
 <body ng-controller="customerController">
-    <div>{{errorMessage}}</div>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>City</th>
-                <th>Country</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="customer in Customers">
-                <td>
-                    {{customer.Name}}
-                </td>
-                <td>
-                    {{customer.City}}
-                </td>
-                <td>
-                    {{customer.Country}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
+<div>{{errorMessage}}</div>
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Country</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="customer in customers">
+        <td>
+            {{customer.Name}}
+        </td>
+        <td>
+            {{customer.City}}
+        </td>
+        <td>
+            {{customer.Country}}
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div ui-ace></div>
 </body>
 </html>
