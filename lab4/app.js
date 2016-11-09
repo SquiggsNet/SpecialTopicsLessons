@@ -4,6 +4,7 @@
     app.controller('labController', function ($scope) {
 
         $scope.students = [];
+        $scope.JSONView = false;
 
         function Student(number, firstName, lastName)
         {
@@ -38,14 +39,20 @@
         };
 
         $scope.displayJSON = function(){
-            var jSonStudentList = JSON.stringify($scope.students);
-            $scope.studentJSON = jSonStudentList;
+
+            $scope.studentJSON = angular.toJson($scope.students, true);
+            $scope.JSONView = true;
+        }
+
+        $scope.clearJSON = function(){
+            $scope.JSONView = false;
         }
 
     });
     app.directive('studentReport', function(){
+
         return {
-            template: 'Todo Count: {{students.length}}'
+            template: '{{studentJSON}}'
         }
     });
 })();
