@@ -23,10 +23,10 @@
 
     <ul>
         <li ng-repeat="student in students">
-            <span>{{student.printStudentDetails()}}</span>
+            <span ng-mouseover="displayJSON()">{{student.printStudentDetails()}}</span>
         </li>
     </ul>
-
-
+    <hr>
+    <div>{{studentJSON}}</div>
 </body>
 </html>

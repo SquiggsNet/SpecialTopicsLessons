@@ -37,5 +37,15 @@
             }
         };
 
+        $scope.displayJSON = function(){
+            var jSonStudentList = JSON.stringify($scope.students);
+            $scope.studentJSON = jSonStudentList;
+        }
+
+    });
+    app.directive('studentReport', function(){
+        return {
+            template: 'Todo Count: {{students.length}}'
+        }
     });
 })();
