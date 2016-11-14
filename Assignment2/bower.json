@@ -1,0 +1,26 @@
+{
+  "name": "Assignment2",
+  "homepage": "https://github.com/NSCC-Fall2016-INFT4000/Rafael-Scott-w0218584",
+  "authors": [
+    "Scott Rafael <w0218584@nscc.ca>"
+  ],
+  "description": "Student app displays/registers students",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "JSON",
+    "tables"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8"
+  }
+}
