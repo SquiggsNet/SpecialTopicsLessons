@@ -7,9 +7,9 @@
         $scope.students = [];
         $scope.errorMessage = "";
 
-        $http.get("http://www.w3schools.com/angular/customers.php")
+        $http.get("package.json")
             .then(function(response){
-                $scope.students = response.data.records;
+                $scope.students = response.data.students;
         },
         function(){
             $scope.errorMessage = "Unable to retrieve data"
