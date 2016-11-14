@@ -1,0 +1,20 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+
+  "students":[
+    {
+      "sNumber":"w0218584",
+      "fName":"Scott",
+      "lName":"Rafael"
+    },{
+      "sNumber":"w0123456",
+      "fName":"Ashlie",
+      "lName":"Dimarco"
+    },{
+      "sNumber":"w9876543",
+      "fName":"Alex",
+      "lName":"Honnold"
+    }
+  ]
+}
