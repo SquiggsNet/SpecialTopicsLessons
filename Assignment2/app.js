@@ -15,7 +15,7 @@
             this.lName = lastName;
         }
 
-        $http.get("package.json")
+        $http.get("students.json")
             .then(function(response){
                 $scope.students = response.data.students;
         },
