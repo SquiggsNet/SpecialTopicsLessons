@@ -5,10 +5,27 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//mysql modules
+var connection = require('express-myconnection');
+var mysql = require('mysql');
+
 var index = require('./routes/index');
 var users = require('./routes/users');
+var api = require('./routes/api');
 
 var app = express();
+
+//define our mysql connection
+app.use(
+    connection(mysql,{
+
+      host: 'localhost',
+      user: 'root',
+      password : 'inet2005',
+      port : 3306, //port mysql
+      database:'Chinook'
+    },'request')
+);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/api/', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
