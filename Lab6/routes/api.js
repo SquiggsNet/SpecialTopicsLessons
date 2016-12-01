@@ -11,7 +11,7 @@ router.route('/employees')
     .get(employeeController.index)
     .post(employeeController.store);
 
-router.route('/employees/:employee_id')
+router.route('/employees/:emp_no')
     .get(employeeController.show)
     .put(employeeController.update)
     .delete(employeeController.destroy);

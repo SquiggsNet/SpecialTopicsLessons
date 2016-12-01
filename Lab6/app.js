@@ -23,7 +23,7 @@ app.use(
       user: 'root',
       password : 'inet2005',
       port : 3306, //port mysql
-      database:'Chinook'
+      database:'employees'
     },'request')
 );
 

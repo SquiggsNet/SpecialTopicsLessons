@@ -5,7 +5,7 @@ module.exports.index = function(req, res) {
 
     req.getConnection(function(err,connection){
 
-        var query = connection.query('SELECT * FROM employee',function(err,rows)     {
+        var query = connection.query('SELECT * FROM employees',function(err,rows)     {
 
             if(err)
                 console.log("Error Selecting : %s ",err );
@@ -22,13 +22,13 @@ module.exports.index = function(req, res) {
 module.exports.show = function(req, res) {
     //get a specific actor data from mysql sakila
 
-    var employee_id = req.params.employee_id;
+    var emp_no = req.params.emp_no;
 
     console.log("In the GET method with params");
 
     req.getConnection(function(err,connection){
 
-        var query = connection.query('SELECT * FROM employee WHERE employee_id = ?;',[employee_id] ,function(err,rows)     {
+        var query = connection.query('SELECT * FROM employees WHERE emp_no = ?;',[emp_no] ,function(err,rows)     {
 
             if(err)
                 console.log("Error Selecting : %s ",err );
@@ -49,10 +49,13 @@ module.exports.store = function(req, res) {
 
     var first_name = req.body.first_name.toUpperCase();
     var last_name = req.body.last_name.toUpperCase();
+    var birth_date = req.body.birth_date;
+    var gender = req.body.gender.toUpperCase();
+    var hire_date = req.body.hire_date;
 
     req.getConnection(function(err,connection){
 
-        var query = connection.query('INSERT INTO employee (first_name, last_name) VALUES (?,?);',[first_name, last_name] ,function(err,rows)     {
+        var query = connection.query('INSERT INTO employees (first_name, last_name, birth_date, gender, hire_date) VALUES (?,?,?,?,?);',[first_name, last_name, birth_date, gender, hire_date] ,function(err,rows)     {
 
             if(err)
                 console.log("Error Selecting : %s ",err );
@@ -72,13 +75,16 @@ module.exports.update = function(req, res) {
 
     console.log("In the PUT method to update employee");
 
-    var employee_id = req.params.actor_id;
+    var emp_no = req.params.emp_no;
     var first_name = req.body.first_name.toUpperCase();
     var last_name = req.body.last_name.toUpperCase();
+    var birth_date = req.body.birth_date;
+    var gender = req.body.gender.toUpperCase();
+    var hire_date = req.body.hire_date;
 
     req.getConnection(function(err,connection){
 
-        var query = connection.query('UPDATE employee SET first_name=?, last_name=? WHERE employee_id=? ;',[first_name, last_name, employee_id] ,function(err,rows)     {
+        var query = connection.query('UPDATE employees SET first_name=?, last_name=?, birth_date=?, gender=?, hire_date=? WHERE emp_no=? ;',[first_name, last_name, birth_date, gender, hire_date, emp_no] ,function(err,rows)     {
 
             if(err)
                 console.log("Error Selecting : %s ",err );
@@ -98,11 +104,11 @@ module.exports.destroy = function(req, res) {
 
     console.log("In the DELETE method");
 
-    var employee_id = req.params.employee_id;
+    var emp_no = req.params.emp_no;
 
     req.getConnection(function(err,connection){
 
-        var query = connection.query('DELETE FROM employee WHERE employee_id=? ;',[employee_id] ,function(err,rows)     {
+        var query = connection.query('DELETE FROM employees WHERE emp_no=? ;',[emp_no] ,function(err,rows)     {
 
             if(err)
                 console.log("Error Selecting : %s ",err );
