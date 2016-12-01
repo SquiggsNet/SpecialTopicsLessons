@@ -3,7 +3,7 @@ var builtinModules = require('builtin-modules');
 var isBuiltinModule = require('is-builtin-module');
 var validator = require('validator');
 var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database(':memory:');
+var db = new sqlite3.Database('Chinook.sqlite');
 
 var hostname = '127.0.0.1';
 var port = 3000;
