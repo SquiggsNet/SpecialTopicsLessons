@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8edca1b6-c055-41a4-ab78-677cfd73c7c5" name="Default" comment="" />
+    <list default="true" id="8edca1b6-c055-41a4-ab78-677cfd73c7c5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FirstDemo/index.html" afterPath="$PROJECT_DIR$/../FirstDemo/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FirstDemo/scripts.js" afterPath="$PROJECT_DIR$/../FirstDemo/scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Lab6FrontEnd.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -42,6 +46,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -61,7 +68,7 @@
     <option name="width" value="1922" />
     <option name="height" value="1019" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -175,12 +182,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480697306034</updated>
-      <workItem from="1480697308688" duration="69000" />
+      <workItem from="1480697308688" duration="210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69000" />
+    <option name="totallyTimeSpent" value="210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1019" extended-state="6" />
