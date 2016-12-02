@@ -5,7 +5,7 @@ module.exports.index = function(req, res) {
 
     req.getConnection(function(err,connection){
 
-        var query = connection.query('SELECT * FROM employees',function(err,rows)     {
+        var query = connection.query('SELECT * FROM employees ORDER BY emp_no DESC LIMIT 0,10;',function(err,rows)     {
 
             if(err)
                 console.log("Error Selecting : %s ",err );
