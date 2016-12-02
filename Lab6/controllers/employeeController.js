@@ -33,7 +33,7 @@ module.exports.show = function(req, res) {
             if(err)
                 console.log("Error Selecting : %s ",err );
 
-            res.json(rows);
+            res.json(rows[0]);
 
         });
 
@@ -47,10 +47,10 @@ module.exports.store = function(req, res) {
 
     console.log("In the POST method to create new employee");
 
-    var first_name = req.body.first_name.toUpperCase();
-    var last_name = req.body.last_name.toUpperCase();
+    var first_name = req.body.first_name;
+    var last_name = req.body.last_name;
     var birth_date = req.body.birth_date;
-    var gender = req.body.gender.toUpperCase();
+    var gender = req.body.gender;
     var hire_date = req.body.hire_date;
 
     req.getConnection(function(err,connection){
@@ -76,10 +76,10 @@ module.exports.update = function(req, res) {
     console.log("In the PUT method to update employee");
 
     var emp_no = req.params.emp_no;
-    var first_name = req.body.first_name.toUpperCase();
-    var last_name = req.body.last_name.toUpperCase();
+    var first_name = req.body.first_name;
+    var last_name = req.body.last_name;
     var birth_date = req.body.birth_date;
-    var gender = req.body.gender.toUpperCase();
+    var gender = req.body.gender;
     var hire_date = req.body.hire_date;
 
     req.getConnection(function(err,connection){

@@ -1,10 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="EmployeeAPIApp">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Employee Client</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="app.js"></script>
 </head>
-<body>
+<body ng-controller="employeeAPIController">
+
+    <div >
+        <p>Employee Number: {{selectedEmployee.emp_no}}</p>
+        <p>First Name: {{selectedEmployee.first_name}}</p>
+        <p>Last Name: {{selectedEmployee.last_name}}</p>
+        <p>Birth Date: {{selectedEmployee.birth_date}}</p>
+        <p>Gender: {{selectedEmployee.gender}}</p>
+        <p>Hire Date: {{selectedEmployee.hire_date}}</p>
+    </div>
+
+    <div>
+        <form ng-submit="addEmployee()">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input ng-model="submittedFirstName" type="text" class="form-control" id="first_name" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input ng-model="submittedLastName" type="text" class="form-control" id="last_name" placeholder="Enter Last Name">
+            </div>
+            <div class="form-group">
+                <label for="birth_date">Birth Date</label>
+                <input ng-model="submittedBirthDate" type="text" class="form-control" id="birth_date" placeholder="Enter Date of Birth">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input ng-model="submittedGender" type="text" class="form-control" id="gender" placeholder="Enter Gender 'M' or 'F'">
+            </div>
+            <div class="form-group">
+                <label for="hire_date">Hire Date</label>
+                <input ng-model="submittedHireDate" type="text" class="form-control" id="hire_date" placeholder="Enter Hire Date">
+            </div>
+            <button type="submit" class="btn btn-default">Register Student</button>
+            <div ng-show="message.length > 0" ng-class="messageClass">{{message}}</div>
+        </form>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Emp. Num</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Birth Date</th>
+                <th>Gender</th>
+                <th>Hire Date</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in employees">
+                <td>{{employee.emp_no}}</td>
+                <td contenteditable="true" id="firstName{{employee.emp_no}}">{{employee.first_name}}</td>
+                <td contenteditable="true" id="lastName{{employee.emp_no}}">{{employee.last_name}}</td>
+                <td contenteditable="true" id="birthDate{{employee.emp_no}}">{{employee.birth_date}}</td>
+                <td contenteditable="true" id="gender{{employee.emp_no}}">{{employee.gender}}</td>
+                <td contenteditable="true" id="hireDate{{employee.emp_no}}">{{employee.hire_date}}</td>
+                <td><img src="images/info.png" ng-click="showEmployee(employee.emp_no)"></td>
+                <td><img src="images/save.png" ng-click="updateEmployee(employee.emp_no)"></td>
+                <td><img src="images/delete.png" ng-click="deleteEmployee(employee.emp_no)"></td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
