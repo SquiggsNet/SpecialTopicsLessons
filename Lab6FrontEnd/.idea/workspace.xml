@@ -11,7 +11,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower_components/angular-resource/.bower.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower_components/angular-resource/LICENSE.md" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower_components/angular-resource/README.md" />
@@ -274,7 +273,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower_components/jquery/src/wrap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FirstDemo/index.html" afterPath="$PROJECT_DIR$/../FirstDemo/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../FirstDemo/scripts.js" afterPath="$PROJECT_DIR$/../FirstDemo/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Lab6FrontEnd.iws" />
@@ -500,7 +498,7 @@
       <workItem from="1480697308688" duration="4488000" />
       <workItem from="1480710070203" duration="9953000" />
       <workItem from="1480948317797" duration="179000" />
-      <workItem from="1481041476649" duration="1339000" />
+      <workItem from="1481041476649" duration="1370000" />
     </task>
     <task id="LOCAL-00001" summary="Established front-end empty project">
       <created>1480697560972</created>
@@ -516,11 +514,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481042571450</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Lab6 complete">
+      <created>1481042877747</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1481042877747</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15959000" />
+    <option name="totallyTimeSpent" value="15990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1602" height="839" extended-state="6" />
