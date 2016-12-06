@@ -81,7 +81,7 @@
                         .then(
                             function () {
                                 //success
-                                $scope.refreshTable();
+                                //$scope.refreshTable();
                                 $scope.message = "Employee has been updated";
                                 $scope.messageClass = 'alert alert-success';
                                 $timeout(removeMessage, 2000);
