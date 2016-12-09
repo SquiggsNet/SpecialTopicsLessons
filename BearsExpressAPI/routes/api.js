@@ -1,33 +1,45 @@
 var express = require('express');
 var router = express.Router();
 var BearsController = require('../controllers/BearsController');
+var RestaurantController = require('../controllers/RestaurantController');
+var UserController = require('../controllers/UserController');
+var AuthController = require('../controllers/AuthController');
 
 router.use(function (req,res,next) {
-    //do logging
-    console.log('something is happening in the API');
-    next();
+
+  console.log('Something is happening in our API');
+  next();
 })
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.json({ message: 'welcome to our Employees api!' });
+  res.json({"message": "Welcome to our API"});
 });
 
+//add more routes
+router.route('/restaurants')
+    .get(RestaurantController.index);
+    //.post(AuthController.isAuthenticated, BearsController.store);
 
-//add more routes here
+router.route('/restaurants/:restaurant_id')
+    .get(RestaurantController.show);
+
 router.route('/bears')
-    .post(BearsController.store)
-    .get(BearsController.index);
+    .get(AuthController.isAuthenticated, BearsController.index)
+    .post(AuthController.isAuthenticated, BearsController.store);
+
 
 
 router.route('/bears/:bear_id')
-    .get(BearsController.show);
-    //.put(BearsController.update)
-    //.delete(BearsController.destroy);
+   .get(AuthController.isAuthenticated, BearsController.show)
+   .put(AuthController.isAuthenticated, BearsController.update)
+   .delete(AuthController.isAuthenticated, BearsController.destroy);
+
+router.route('/users')
+    .post(AuthController.isAuthenticated, UserController.store)
+    .get(AuthController.isAuthenticated, UserController.index);
 
 
 
 module.exports = router;
-/**
- * Created by inet2005 on 12/6/16.
- */

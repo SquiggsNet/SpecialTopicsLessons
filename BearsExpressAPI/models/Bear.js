@@ -1,8 +1,14 @@
-var mongoose     = require('mongoose');
-var Schema       = mongoose.Schema;
+/**
+ * Created by inet2005 on 12/6/16.
+ */
+// app/models/bear.js
 
-var BearSchema   = new Schema({
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var BearSchema = new Schema({
     name: String
+    //,userId: String
 });
 
 module.exports = mongoose.model('Bear', BearSchema);
