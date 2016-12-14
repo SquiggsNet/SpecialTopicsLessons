@@ -12,7 +12,7 @@ module.exports.store = function(req, res) {
         if (err)
             res.send(err);
 
-        res.json({ message: 'New Bear tamer added to the locker wildernesss!' });
+        res.json({ message: 'New Restaurant reviewer has been added to the team!' });
     });
 };
 
