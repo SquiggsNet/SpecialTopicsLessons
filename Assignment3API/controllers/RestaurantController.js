@@ -30,13 +30,13 @@ module.exports.store = function(req, res) {
     restaurant.borough = req.body.borough;
     restaurant.cuisine = req.body.cuisine;
     // restaurant.grades =
-    // {
+    // [{
     //     date:{
     //         $date: req.body.gDate,
     //         grade: req.body.gGrade,
     //         score: req.body.gScore
     //     }
-    // };
+    // }];
     restaurant.name = req.body.name;
     restaurant.restaurant_id = req.body.restaurant_id;
 
